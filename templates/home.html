@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0f2f5;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: #007bff;
+            margin: 20px 0;
+        }
+
+        p {
+            font-size: 16px;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #007bff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, {{ username }}!</h1>
+        <p>You have successfully logged in.</p>
+        <h2>Speech to Text</h2>
+        <form id="speechForm" action="/speech" method="post">
+            <button type="submit">Start Speech Recognition</button>
+        </form>
+        {% if speech_text %}
+            <p>You said: {{ speech_text }}</p>
+        {% endif %}
+    </div>
+    <script>
+        // If you want to add any JavaScript functionality, you can add it here.
+    </script>
+</body>
+</html>
