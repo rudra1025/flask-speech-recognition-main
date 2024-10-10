@@ -70,6 +70,7 @@
         <p>You have successfully logged in.</p>
         <h2>Speech to Text</h2>
         <form id="speechForm" action="/speech" method="post">
+            <input type="hidden" name="username" value="{{ username }}"> <!-- Hidden input for username -->
             <button type="submit">Start Speech Recognition</button>
         </form>
         {% if speech_text %}
